@@ -1,7 +1,7 @@
 import string
 from sys import exit
 from collections import Counter
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 def Text_processing():
      presence_of_words = {}
