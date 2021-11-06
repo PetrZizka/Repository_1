@@ -27,6 +27,9 @@ def Text_processing():
             word_and_len = {word: len(word) for word in sorted_list}
             occurences = Counter(word_and_len.values())
             plt.bar(occurences.keys(), occurences.values())
+            plt.title("frequency of different word lengths in text")
+            plt.xlabel("word length")
+            plt.ylabel("word frequency")
             plt.show()
             break
 
