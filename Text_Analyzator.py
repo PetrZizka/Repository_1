@@ -35,8 +35,8 @@ def Text_processing():
 
 users = dict({"bob" : "123", "ann" : "pass123", "mike" : "password123", "liz" : "pass123"})
 
-username = input ("Your Username: ")
-password = input("Password:")
+username = input ("Your Username: ").lower()
+password = input("Password:").lower()
 
 if users.get(username) == password:
     print("access granted.", "Hi,", username.title(), "Welcome to our application" )
@@ -74,15 +74,15 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
 ]
-text_number = int(input("We have 3 texts to be analyzed\n Enter a number btw. 1 and 3 to select:"))
 
-if (text_number) == 1:
-    clean_words = [word.strip(string.punctuation) for word in TEXTS[0].split() if len(word) >= 1]
-    Text_processing()
-
-elif (text_number) == 2:
-     clean_words = [word.strip(string.punctuation) for word in TEXTS[1].split() if len(word) >= 1]
-     Text_processing()
-elif (text_number) == 3:
-     clean_words = [word.strip(string.punctuation) for word in TEXTS[2].split() if len(word) >= 1]
-     Text_processing()
+try:    
+    text_chosing = int(input(f"We have {len(TEXTS)} texts to be analyzed\n Enter a number btw. 1 and  {len(TEXTS)} to select:"))
+    text_index = (text_chosing - 1)
+    selected_text = TEXTS[text_index]   
+except: 
+    print("Something is wrong .... Try it again ...")
+else:
+    text_chosing >= 0 and text_chosing <= len(TEXTS[text_index])
+    clean_words = [word.strip(string.punctuation) for word in selected_text.split() if len(word) >= 2]
+    Text_processing()    
+    exit(0)
