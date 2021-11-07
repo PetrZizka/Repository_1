@@ -82,7 +82,7 @@ try:
 except: 
     print("Something is wrong .... Try it again ...")
 else:
-    text_chosing >= 0 and text_chosing <= len(TEXTS[text_index])
+    text_chosing > 0 and text_chosing <= len(TEXTS[text_index])
     clean_words = [word.strip(string.punctuation) for word in selected_text.split() if len(word) >= 2]
     Text_processing()    
     exit(0)
