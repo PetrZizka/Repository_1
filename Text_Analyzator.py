@@ -12,15 +12,15 @@ def Text_processing():
             presence_of_words[word] += 1
             
             presence_of_words = {word : clean_words.count(word) for word in clean_words}
-            print("There are", len(clean_words), " words in the selected text.")
+            print("There are", sum(presence_of_words.values()), " words in the selected text.")
             title_case_word = {word : clean_words.count(word) for word in clean_words if word.istitle()}
-            print("There are", len(title_case_word), "titlecase words in the selected text.")
+            print("There are", sum(title_case_word.values()), "titlecase words in the selected text.")
             upper_case_word = {word : clean_words.count(word) for word in clean_words if word.isupper()}
-            print("There are", len(upper_case_word), "uppercase words in the selected text.")
+            print("There are", sum(upper_case_word.values()), "uppercase words in the selected text.")
             lower_case_word = {word : clean_words.count(word) for word in clean_words if word.islower()}
-            print("There are", len(lower_case_word), "lowercase words in the selected text.")
+            print("There are", sum(lower_case_word.values()), "lowercase words in the selected text.")
             numeric_string = {word : clean_words.count(word) for word in clean_words if word.isnumeric()}
-            print("There are", len(numeric_string), " numeric strings in the selected text.")
+            print("There are", sum(numeric_string.values()), " numeric strings in the selected text.")
             sum_of_numbers = [int(word) for word in numeric_string]
             print("The sum of all the numbers", sum(sum_of_numbers))
             sorted_list = sorted(clean_words, key=len)
@@ -39,12 +39,12 @@ username = input ("Your Username: ").lower()
 password = input("Password:").lower()
 
 if users.get(username) == password:
-    print("access granted.", "Hi,", username.title(), "Welcome to our application" )
+    print(f"Access granted. Hi, {username.title()}, Welcome to our application" )
     
 else :
     print("incorrect password or Username")
     exit(0)
-    
+   
 TEXTS = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
@@ -84,5 +84,5 @@ except:
 else:
     text_chosing > 0 and text_chosing <= len(TEXTS[text_index])
     clean_words = [word.strip(string.punctuation) for word in selected_text.split() if len(word) >= 2]
-    Text_processing()    
+    Text_processing() 
     exit(0)
