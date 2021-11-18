@@ -13,7 +13,7 @@ def Text_processing():
             
             presence_of_words = {word : clean_words.count(word) for word in clean_words}
             print("There are", sum(presence_of_words.values()), " words in the selected text.")
-            title_case_word = {word : clean_words.count(word) for word in clean_words if word.istitle()}
+            title_case_word = {word : clean_words.count(word) for word in clean_words if word.istitle() and word.isalpha()}
             print("There are", sum(title_case_word.values()), "titlecase words in the selected text.")
             upper_case_word = {word : clean_words.count(word) for word in clean_words if word.isupper()}
             print("There are", sum(upper_case_word.values()), "uppercase words in the selected text.")
