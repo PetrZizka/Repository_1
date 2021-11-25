@@ -76,7 +76,7 @@ garpike and stingray are also present.'''
 ]
 
 try:    
-    text_chosing = int(input(f"We have {len(TEXTS)} texts to be analyzed\n Enter a number btw. 1 and  {len(TEXTS)} to select:"))
+    text_chosing = int(input(f"We have {len(TEXTS)} texts to be analyzed.\nEnter a number btw. 1 and {len(TEXTS)} to select:"))
     text_index = (text_chosing - 1)
     selected_text = TEXTS[text_index]   
 except: 
