@@ -46,7 +46,7 @@ else :
     exit(0)
    
 TEXTS = ['''
-Situated about 10 miles west of Kemmerer, 
+Situated about   10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
 topographic feature that rises sharply 
 some 1000 feet above Twin Creek Valley 
@@ -83,6 +83,6 @@ except:
     print("Something is wrong .... Try it again ...")
 else:
     text_chosing > 0 and text_chosing <= len(TEXTS[text_index])
-    clean_words = [word.strip(string.punctuation) for word in selected_text.split() if len(word) >= 2]
+    strip = string.punctuation + string.whitespace
+    clean_words = [word.strip(strip) for word in selected_text.split(" ") if len(word) > 0]
     Text_processing() 
-    exit(0)
